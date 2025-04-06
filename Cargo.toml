@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/*",
+    "collider-py",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+authors = ["Antoine Groudiev <antoine.groudiev@ens.psl.eu>"]
+readme = "README.md"
+description = "An experimental collision-detection library."
+repository = "https://github.com/agroudiev/collider"
+license = "CC-BY-4.0"
+license-file = "LICENSE"
+
+[workspace.dependencies]
+pyo3 = { version = "0.22", features = ["extension-module"] }
+numpy = "0.22"
