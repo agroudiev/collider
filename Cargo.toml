@@ -12,7 +12,6 @@ authors = ["Antoine Groudiev <antoine.groudiev@ens.psl.eu>"]
 readme = "README.md"
 description = "An experimental collision-detection library."
 repository = "https://github.com/agroudiev/collider"
-license = "CC-BY-4.0"
 license-file = "LICENSE"
 
 [workspace.dependencies]
