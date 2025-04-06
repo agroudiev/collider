@@ -1,3 +1,4 @@
+/// A sphere shape.
 #[derive(PartialEq, Debug, Copy, Clone)]
 pub struct Sphere {
     ///  The radius of the sphere.
