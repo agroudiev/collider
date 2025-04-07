@@ -6,6 +6,8 @@ edition = "2024"
 [lib]
 name = "collider"
 crate-type = ["cdylib"]
+doc = false
 
 [dependencies]
-pyo3 = "0.24.0"
+pyo3 = { workspace = true}
+collider = { workspace = true }

@@ -1,7 +1,10 @@
+use pyo3::pyclass;
+
 /// A cone shape aligned along the `z`-axis.
 ///
 /// The base of the cone is at `(0, 0, -half_length)` and the tip is at `(0, 0, half_length)`.
 #[derive(PartialEq, Debug, Copy, Clone)]
+#[pyclass(name = "Cone")]
 pub struct Cone {
     /// The radius of the cone.
     pub radius: f32,

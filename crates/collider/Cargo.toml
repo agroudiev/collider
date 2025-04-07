@@ -1,5 +1,5 @@
 [package]
-name = "shape"
+name = "collider"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -9,4 +9,4 @@ repository.workspace = true
 license-file.workspace = true
 
 [dependencies]
-pyo3 = { workspace = true }
+shape = { workspace = true}

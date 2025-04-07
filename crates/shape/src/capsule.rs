@@ -1,8 +1,11 @@
+use pyo3::pyclass;
+
 /// A capsule shape aligned along the `z`-axis.
 ///
 /// Mathematically, a capsule is the set of points that are at most `radius` units away from the line segment.
 /// The line segment is defined by the two endpoints at `(0, 0, -half_length)` and `(0, 0, half_length)`.
 #[derive(PartialEq, Debug, Copy, Clone)]
+#[pyclass(name = "Capsule")]
 pub struct Capsule {
     /// The radius of the capsule.
     pub radius: f32,

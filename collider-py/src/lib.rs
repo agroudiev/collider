@@ -1,14 +1,16 @@
 use pyo3::prelude::*;
 
-/// Formats the sum of two numbers as string.
-#[pyfunction]
-fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
-    Ok((a + b).to_string())
-}
+use collider::shape::{Capsule, Cone, Cuboid, Cylinder, Sphere};
 
 /// A Python module implemented in Rust.
-#[pymodule]
+#[pymodule(name = "collider")]
 fn collider_py(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
+    // Shapes
+    m.add_class::<Capsule>()?;
+    m.add_class::<Cone>()?;
+    m.add_class::<Cuboid>()?;
+    m.add_class::<Cylinder>()?;
+    m.add_class::<Sphere>()?;
+
     Ok(())
 }
