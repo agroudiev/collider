@@ -47,6 +47,13 @@ impl BoundingVolume for AABB {
             && self.max.z >= other.max.z
     }
 
+    fn scale(&mut self, scale: f32) {
+        let center = self.center();
+        let half_size = (self.max - self.min) * 0.5 * scale;
+        self.min = center - half_size;
+        self.max = center + half_size;
+    }
+
     fn intersects(&self, other: &Self) -> bool {
         self.min.x <= other.max.x
             && self.max.x >= other.min.x

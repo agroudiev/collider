@@ -23,6 +23,13 @@ trait BoundingVolume {
     /// * `other` - The other bounding volume to check for containment.
     fn contains_volume(&self, other: &Self) -> bool;
 
+    /// Scales the bounding volume by a given factor.
+    /// 
+    /// # Arguments
+    /// 
+    /// * `scale` - The scaling factor.
+    fn scale(&mut self, scale: f32);
+
     /// Checks if this bounding volume intersects with another bounding volume of the same type.
     ///
     /// # Arguments

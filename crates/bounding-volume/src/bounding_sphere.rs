@@ -37,6 +37,10 @@ impl BoundingVolume for BoundingSphere {
             <= self.radius * self.radius
     }
 
+    fn scale(&mut self, scale: f32) {
+        self.radius *= scale;
+    }
+
     fn intersects(&self, other: &Self) -> bool {
         nalgebra::distance_squared(&self.center, &other.center)
             <= (self.radius + other.radius) * (self.radius + other.radius)
