@@ -1,0 +1,13 @@
+[package]
+name = "bounding_volume"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+readme.workspace = true
+description.workspace = true
+repository.workspace = true
+license-file.workspace = true
+
+[dependencies]
+nalgebra = "0.33.2"
+pyo3 = { workspace = true }
