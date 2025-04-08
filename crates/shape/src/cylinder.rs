@@ -14,6 +14,11 @@ pub struct Cylinder {
 
 impl Cylinder {
     /// Creates a new cylinder with given radius and half height.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the cylinder.
+    /// * `half_length` - The half length of the cylinder along the `z`-axis.
     pub fn new(radius: f32, half_length: f32) -> Self {
         Cylinder {
             radius,

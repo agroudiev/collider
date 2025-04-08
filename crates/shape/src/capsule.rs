@@ -15,6 +15,11 @@ pub struct Capsule {
 
 impl Capsule {
     /// Creates a new capsule with given radius and half length.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the capsule.
+    /// * `half_length` - The half length of the capsule along the `z`-axis.
     pub fn new(radius: f32, half_length: f32) -> Self {
         Capsule {
             radius,

@@ -13,6 +13,11 @@ pub struct Cone {
 }
 impl Cone {
     /// Creates a new cone with given radius and half height.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the cone.
+    /// * `half_length` - The half length of the cone along the `z`-axis.
     pub fn new(radius: f32, half_length: f32) -> Self {
         Cone {
             radius,

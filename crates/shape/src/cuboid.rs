@@ -1,3 +1,4 @@
+use nalgebra::Vector3;
 use pyo3::pyclass;
 
 /// A cuboid shape.
@@ -7,12 +8,16 @@ use pyo3::pyclass;
 #[pyclass(name = "Cuboid")]
 pub struct Cuboid {
     /// The half extents of the cuboid.
-    pub half_extents: [f32; 3],
+    pub half_extents: Vector3<f32>,
 }
 
 impl Cuboid {
     /// Creates a new cuboid with given half extents.
-    pub fn new(half_extents: [f32; 3]) -> Self {
+    ///
+    /// # Arguments
+    ///
+    /// * `half_extents` - The half extents of the cuboid along the `x`, `y`, and `z` axes.
+    pub fn new(half_extents: Vector3<f32>) -> Self {
         Cuboid { half_extents }
     }
 }

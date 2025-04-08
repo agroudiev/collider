@@ -10,6 +10,10 @@ pub struct Sphere {
 
 impl Sphere {
     /// Creates a new sphere with given radius.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the sphere.
     pub fn new(radius: f32) -> Self {
         Sphere { radius }
     }
