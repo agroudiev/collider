@@ -1,5 +1,7 @@
 use pyo3::pyclass;
 
+use crate::shape::Shape;
+
 /// A capsule shape aligned along the `z`-axis.
 ///
 /// Mathematically, a capsule is the set of points that are at most `radius` units away from the line segment.
@@ -25,5 +27,11 @@ impl Capsule {
             radius,
             half_length,
         }
+    }
+}
+
+impl Shape for Capsule {
+    fn is_convex(&self) -> bool {
+        true
     }
 }

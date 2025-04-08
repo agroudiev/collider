@@ -1,5 +1,7 @@
 use pyo3::pyclass;
 
+use crate::shape::Shape;
+
 /// A cylinder shape aligned along the `z`-axis.
 ///
 /// The base of the cylinder is at `(0, 0, -half_length)` and the top is at `(0, 0, half_length)`.
@@ -24,5 +26,11 @@ impl Cylinder {
             radius,
             half_length,
         }
+    }
+}
+
+impl Shape for Cylinder {
+    fn is_convex(&self) -> bool {
+        true
     }
 }

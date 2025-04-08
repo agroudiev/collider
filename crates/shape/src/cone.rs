@@ -1,5 +1,7 @@
 use pyo3::pyclass;
 
+use crate::shape::Shape;
+
 /// A cone shape aligned along the `z`-axis.
 ///
 /// The base of the cone is at `(0, 0, -half_length)` and the tip is at `(0, 0, half_length)`.
@@ -23,5 +25,11 @@ impl Cone {
             radius,
             half_length,
         }
+    }
+}
+
+impl Shape for Cone {
+    fn is_convex(&self) -> bool {
+        true
     }
 }
