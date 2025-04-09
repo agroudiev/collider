@@ -1,4 +1,4 @@
-use pyo3::pyclass;
+use pyo3::{pyclass, pymethods};
 
 use crate::shape::Shape;
 
@@ -24,5 +24,31 @@ impl Sphere {
 impl Shape for Sphere {
     fn is_convex(&self) -> bool {
         true
+    }
+}
+
+
+#[pyclass(name = "Sphere")]
+pub struct PySphere {
+    inner: Sphere,
+}
+
+#[pymethods]
+impl PySphere {
+    /// Creates a new sphere with given radius.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the sphere.
+    #[new]
+    fn new(radius: f32) -> Self {
+        PySphere {
+            inner: Sphere::new(radius),
+        }
+    }
+
+    /// Returns the radius of the sphere.
+    fn radius(&self) -> f32 {
+        self.inner.radius
     }
 }

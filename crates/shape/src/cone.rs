@@ -1,4 +1,4 @@
-use pyo3::pyclass;
+use pyo3::{pyclass, pymethods};
 
 use crate::shape::Shape;
 
@@ -31,5 +31,37 @@ impl Cone {
 impl Shape for Cone {
     fn is_convex(&self) -> bool {
         true
+    }
+}
+
+
+#[pyclass(name = "Cone")]
+pub struct PyCone {
+    inner: Cone,
+}
+
+#[pymethods]
+impl PyCone {
+    /// Creates a new cone with given radius and half height.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the cone.
+    /// * `half_length` - The half length of the cone along the `z`-axis.
+    #[new]
+    fn new(radius: f32, half_length: f32) -> Self {
+        PyCone {
+            inner: Cone::new(radius, half_length),
+        }
+    }
+
+    /// Returns the radius of the cone.
+    fn radius(&self) -> f32 {
+        self.inner.radius
+    }
+
+    /// Returns the half length of the cone.
+    fn half_length(&self) -> f32 {
+        self.inner.half_length
     }
 }

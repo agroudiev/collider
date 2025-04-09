@@ -4,11 +4,11 @@
 //! Note that a shape does not contain any information about the position
 //! or orientation of the object, only its geometric properties.
 
-pub use capsule::Capsule;
-pub use cone::Cone;
-pub use cuboid::Cuboid;
-pub use cylinder::Cylinder;
-pub use sphere::Sphere;
+pub use capsule::*;
+pub use cone::*;
+pub use cuboid::*;
+pub use cylinder::*;
+pub use sphere::*;
 
 pub mod shape;
 

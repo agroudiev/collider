@@ -1,4 +1,4 @@
-use pyo3::pyclass;
+use pyo3::{pyclass, pymethods};
 
 use crate::shape::Shape;
 
@@ -7,7 +7,6 @@ use crate::shape::Shape;
 /// Mathematically, a capsule is the set of points that are at most `radius` units away from the line segment.
 /// The line segment is defined by the two endpoints at `(0, 0, -half_length)` and `(0, 0, half_length)`.
 #[derive(PartialEq, Debug, Copy, Clone)]
-#[pyclass(name = "Capsule")]
 pub struct Capsule {
     /// The radius of the capsule.
     pub radius: f32,
@@ -33,5 +32,32 @@ impl Capsule {
 impl Shape for Capsule {
     fn is_convex(&self) -> bool {
         true
+    }
+}
+
+
+#[pyclass(name = "Capsule")]
+pub struct PyCapsule {
+    inner: Capsule,
+}
+
+#[pymethods]
+impl PyCapsule {
+    /// Creates a new capsule with given radius and half length.
+    #[new]
+    fn new(radius: f32, half_length: f32) -> Self {
+        PyCapsule {
+            inner: Capsule::new(radius, half_length),
+        }
+    }
+
+    /// Returns the radius of the capsule.
+    fn radius(&self) -> f32 {
+        self.inner.radius
+    }
+
+    /// Returns the half length of the capsule.
+    fn half_length(&self) -> f32 {
+        self.inner.half_length
     }
 }

@@ -1,4 +1,4 @@
-use pyo3::pyclass;
+use pyo3::{pyclass, pymethods};
 
 use crate::shape::Shape;
 
@@ -32,5 +32,37 @@ impl Cylinder {
 impl Shape for Cylinder {
     fn is_convex(&self) -> bool {
         true
+    }
+}
+
+
+#[pyclass(name = "Cylinder")]
+pub struct PyCylinder {
+    inner: Cylinder,
+}
+
+#[pymethods]
+impl PyCylinder {
+    /// Creates a new cylinder with given radius and half height.
+    ///
+    /// # Arguments
+    ///
+    /// * `radius` - The radius of the cylinder.
+    /// * `half_length` - The half length of the cylinder along the `z`-axis.
+    #[new]
+    fn new(radius: f32, half_length: f32) -> Self {
+        PyCylinder {
+            inner: Cylinder::new(radius, half_length),
+        }
+    }
+
+    /// Returns the radius of the cylinder.
+    fn radius(&self) -> f32 {
+        self.inner.radius
+    }
+
+    /// Returns the half length of the cylinder.
+    fn half_length(&self) -> f32 {
+        self.inner.half_length
     }
 }

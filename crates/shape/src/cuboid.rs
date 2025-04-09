@@ -1,5 +1,5 @@
 use nalgebra::Vector3;
-use pyo3::pyclass;
+use pyo3::{pyclass, pymethods};
 
 use crate::shape::Shape;
 
@@ -27,5 +27,31 @@ impl Cuboid {
 impl Shape for Cuboid {
     fn is_convex(&self) -> bool {
         true
+    }
+}
+
+
+#[pyclass(name = "Cuboid")]
+pub struct PyCuboid {
+    inner: Cuboid,
+}
+
+#[pymethods]
+impl PyCuboid {
+    /// Creates a new cuboid with given half extents.
+    ///
+    /// # Arguments
+    ///
+    /// * `half_extents` - The half extents of the cuboid along the `x`, `y`, and `z` axes.
+    #[new]
+    fn new(half_extents: Vec<f32>) -> Self {
+        PyCuboid {
+            inner: Cuboid::new(Vector3::new(half_extents[0], half_extents[1], half_extents[2])),
+        }
+    }
+
+    /// Returns the half extents of the cuboid.
+    fn half_extents(&self) -> Vec<f32> {
+        vec![self.inner.half_extents.x, self.inner.half_extents.y, self.inner.half_extents.z]
     }
 }
