@@ -21,9 +21,9 @@ pub trait BoundingVolume {
     fn contains_volume(&self, other: &Self) -> bool;
 
     /// Scales the bounding volume by a given factor.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * `scale` - The scaling factor.
     fn scale(&mut self, scale: f32);
 

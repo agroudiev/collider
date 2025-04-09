@@ -10,10 +10,10 @@ pub use cuboid::Cuboid;
 pub use cylinder::Cylinder;
 pub use sphere::Sphere;
 
-mod shape;
+pub mod shape;
 
-mod capsule;
-mod cone;
-mod cuboid;
-mod cylinder;
-mod sphere;
+pub mod capsule;
+pub mod cone;
+pub mod cuboid;
+pub mod cylinder;
+pub mod sphere;
