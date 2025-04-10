@@ -28,12 +28,15 @@ impl Shape for Cuboid {
     fn is_convex(&self) -> bool {
         true
     }
-}
 
+    fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
+        Box::new(self.clone())
+    }
+}
 
 #[pyclass(name = "Cuboid")]
 pub struct PyCuboid {
-    inner: Cuboid,
+    pub inner: Cuboid,
 }
 
 #[pymethods]
@@ -46,12 +49,20 @@ impl PyCuboid {
     #[new]
     fn new(half_extents: Vec<f32>) -> Self {
         PyCuboid {
-            inner: Cuboid::new(Vector3::new(half_extents[0], half_extents[1], half_extents[2])),
+            inner: Cuboid::new(Vector3::new(
+                half_extents[0],
+                half_extents[1],
+                half_extents[2],
+            )),
         }
     }
 
     /// Returns the half extents of the cuboid.
     fn half_extents(&self) -> Vec<f32> {
-        vec![self.inner.half_extents.x, self.inner.half_extents.y, self.inner.half_extents.z]
+        vec![
+            self.inner.half_extents.x,
+            self.inner.half_extents.y,
+            self.inner.half_extents.z,
+        ]
     }
 }

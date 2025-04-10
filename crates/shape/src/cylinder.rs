@@ -33,12 +33,15 @@ impl Shape for Cylinder {
     fn is_convex(&self) -> bool {
         true
     }
-}
 
+    fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
+        Box::new(self.clone())
+    }
+}
 
 #[pyclass(name = "Cylinder")]
 pub struct PyCylinder {
-    inner: Cylinder,
+    pub inner: Cylinder,
 }
 
 #[pymethods]

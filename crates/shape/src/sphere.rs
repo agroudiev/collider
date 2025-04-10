@@ -25,12 +25,15 @@ impl Shape for Sphere {
     fn is_convex(&self) -> bool {
         true
     }
-}
 
+    fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
+        Box::new(self.clone())
+    }
+}
 
 #[pyclass(name = "Sphere")]
 pub struct PySphere {
-    inner: Sphere,
+    pub inner: Sphere,
 }
 
 #[pymethods]

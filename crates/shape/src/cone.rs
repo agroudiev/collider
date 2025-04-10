@@ -32,12 +32,15 @@ impl Shape for Cone {
     fn is_convex(&self) -> bool {
         true
     }
-}
 
+    fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
+        Box::new(self.clone())
+    }
+}
 
 #[pyclass(name = "Cone")]
 pub struct PyCone {
-    inner: Cone,
+    pub inner: Cone,
 }
 
 #[pymethods]

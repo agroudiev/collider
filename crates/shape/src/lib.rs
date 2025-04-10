@@ -10,6 +10,8 @@ pub use cuboid::*;
 pub use cylinder::*;
 pub use sphere::*;
 
+pub use shape::*;
+
 pub mod shape;
 
 pub mod capsule;

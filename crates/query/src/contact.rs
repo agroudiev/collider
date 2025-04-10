@@ -13,9 +13,9 @@ pub struct Contact {
 
 /// Computes the contact properties between two shapes.
 /// This function returns `None` if the shapes are not in contact.
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `shape1` - The first shape.
 /// * `pos1` - The position and rotation of the first shape.
 /// * `shape2` - The second shape.
