@@ -1,5 +1,5 @@
 use nalgebra::Vector3;
-use pyo3::{pyclass, pymethods};
+use pyo3::prelude::*;
 
 use crate::shape::Shape;
 
@@ -63,14 +63,5 @@ impl PyCuboid {
                 half_extents[2],
             )),
         }
-    }
-
-    /// Returns the half extents of the cuboid.
-    fn half_extents(&self) -> Vec<f32> {
-        vec![
-            self.inner.half_extents.x,
-            self.inner.half_extents.y,
-            self.inner.half_extents.z,
-        ]
     }
 }

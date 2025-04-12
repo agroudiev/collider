@@ -1,6 +1,7 @@
 //! This module defines a trait for geometric shapes and a wrapper type for dynamic dispatch.;
 
 use nalgebra::Vector3;
+use numpy::{ToPyArray, ndarray::Array1};
 use pyo3::prelude::*;
 
 /// A wrapper type for the Shape trait to allow dynamic dispatch.
@@ -67,16 +68,20 @@ impl PyShapeWrapper {
         }
     }
 
-    // #[getter]
-    // fn get_half_extents(&self) -> PyResult<Array3<f32>> {
-    //     if let Some(half_extents) = self.inner.get_half_extents() {
-    //         Ok(half_extents)
-    //     } else {
-    //         Err(pyo3::exceptions::PyValueError::new_err(
-    //             "Shape does not have half extents",
-    //         ))
-    //     }
-    // }
+    #[getter]
+    fn get_half_extents(&self, py: Python) -> PyResult<Py<PyAny>> {
+        if let Some(half_extents) = self.inner.get_half_extents() {
+            Ok(Array1::from_shape_vec(3, half_extents.as_slice().to_vec())
+                .unwrap()
+                .to_pyarray(py)
+                .into_any()
+                .unbind())
+        } else {
+            Err(pyo3::exceptions::PyValueError::new_err(
+                "Shape does not have half extents",
+            ))
+        }
+    }
 
     #[getter]
     fn get_half_length(&self) -> PyResult<f32> {
