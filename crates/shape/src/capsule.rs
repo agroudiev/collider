@@ -38,6 +38,18 @@ impl Shape for Capsule {
     fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
         Box::new(self.clone())
     }
+
+    fn get_shape_type(&self) -> crate::shape::ShapeType {
+        crate::shape::ShapeType::Capsule
+    }
+
+    fn get_radius(&self) -> Option<f32> {
+        Some(self.radius)
+    }
+
+    fn get_half_length(&self) -> Option<f32> {
+        Some(self.half_length)
+    }
 }
 
 #[pyclass(name = "Capsule")]
@@ -53,15 +65,5 @@ impl PyCapsule {
         PyCapsule {
             inner: Capsule::new(radius, half_length),
         }
-    }
-
-    /// Returns the radius of the capsule.
-    fn radius(&self) -> f32 {
-        self.inner.radius
-    }
-
-    /// Returns the half length of the capsule.
-    fn half_length(&self) -> f32 {
-        self.inner.half_length
     }
 }

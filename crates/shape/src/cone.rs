@@ -36,6 +36,18 @@ impl Shape for Cone {
     fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
         Box::new(self.clone())
     }
+
+    fn get_shape_type(&self) -> crate::shape::ShapeType {
+        crate::shape::ShapeType::Cone
+    }
+
+    fn get_radius(&self) -> Option<f32> {
+        Some(self.radius)
+    }
+
+    fn get_half_length(&self) -> Option<f32> {
+        Some(self.half_length)
+    }
 }
 
 #[pyclass(name = "Cone")]

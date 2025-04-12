@@ -29,6 +29,14 @@ impl Shape for Sphere {
     fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
         Box::new(self.clone())
     }
+
+    fn get_shape_type(&self) -> crate::shape::ShapeType {
+        crate::shape::ShapeType::Sphere
+    }
+
+    fn get_radius(&self) -> Option<f32> {
+        Some(self.radius)
+    }
 }
 
 #[pyclass(name = "Sphere")]
@@ -48,10 +56,5 @@ impl PySphere {
         PySphere {
             inner: Sphere::new(radius),
         }
-    }
-
-    /// Returns the radius of the sphere.
-    fn radius(&self) -> f32 {
-        self.inner.radius
     }
 }

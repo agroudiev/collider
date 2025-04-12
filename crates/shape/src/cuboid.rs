@@ -32,6 +32,14 @@ impl Shape for Cuboid {
     fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
         Box::new(self.clone())
     }
+
+    fn get_shape_type(&self) -> crate::shape::ShapeType {
+        crate::shape::ShapeType::Cuboid
+    }
+
+    fn get_half_extents(&self) -> Option<Vector3<f32>> {
+        Some(self.half_extents)
+    }
 }
 
 #[pyclass(name = "Cuboid")]
