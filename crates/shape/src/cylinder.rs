@@ -63,11 +63,11 @@ impl PyCylinder {
     /// # Arguments
     ///
     /// * `radius` - The radius of the cylinder.
-    /// * `half_length` - The half length of the cylinder along the `z`-axis.
+    /// * `length` - The length of the cylinder along the `z`-axis.
     #[new]
-    fn new(radius: f32, half_length: f32) -> Self {
+    fn new(radius: f32, length: f32) -> Self {
         PyCylinder {
-            inner: Cylinder::new(radius, half_length),
+            inner: Cylinder::new(radius, length / 2.0),
         }
     }
 

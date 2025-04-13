@@ -62,11 +62,11 @@ impl PyCone {
     /// # Arguments
     ///
     /// * `radius` - The radius of the cone.
-    /// * `half_length` - The half length of the cone along the `z`-axis.
+    /// * `ength` - The length of the cone along the `z`-axis.
     #[new]
-    fn new(radius: f32, half_length: f32) -> Self {
+    fn new(radius: f32, length: f32) -> Self {
         PyCone {
-            inner: Cone::new(radius, half_length),
+            inner: Cone::new(radius, length / 2.0),
         }
     }
 

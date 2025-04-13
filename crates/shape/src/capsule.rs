@@ -59,11 +59,11 @@ pub struct PyCapsule {
 
 #[pymethods]
 impl PyCapsule {
-    /// Creates a new capsule with given radius and half length.
+    /// Creates a new capsule with given radius and length along the `z` axis.
     #[new]
-    fn new(radius: f32, half_length: f32) -> Self {
+    fn new(radius: f32, length: f32) -> Self {
         PyCapsule {
-            inner: Capsule::new(radius, half_length),
+            inner: Capsule::new(radius, length / 2.0),
         }
     }
 }

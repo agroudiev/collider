@@ -53,15 +53,11 @@ impl PyCuboid {
     ///
     /// # Arguments
     ///
-    /// * `half_extents` - The half extents of the cuboid along the `x`, `y`, and `z` axes.
+    /// * `sides` - The length of the sides of the cuboid along the `x`, `y`, and `z` axes.
     #[new]
-    fn new(half_extents: Vec<f32>) -> Self {
+    fn new(sides: Vec<f32>) -> Self {
         PyCuboid {
-            inner: Cuboid::new(Vector3::new(
-                half_extents[0],
-                half_extents[1],
-                half_extents[2],
-            )),
+            inner: Cuboid::new(Vector3::new(sides[0] / 2.0, sides[1] / 2.0, sides[2] / 2.0)),
         }
     }
 }
