@@ -1,11 +1,46 @@
-//! This module defines a trait for geometric shapes and a wrapper type for dynamic dispatch.;
+//! This module defines a trait for geometric shapes and a wrapper type for dynamic dispatch.
+
+use std::fmt::Debug;
 
 use nalgebra::Vector3;
 use numpy::{ToPyArray, ndarray::Array1};
 use pyo3::prelude::*;
 
+/// A type alias for an object implementing the Shape trait.
+/// This is separated from ShapeWrapper to allow for implementing the Debug trait.
+pub type InnerShapeWrapper = dyn Shape + Send + Sync;
+
+impl Debug for &InnerShapeWrapper {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("InnerShapeWrapper")
+            .field("shape_type", &self.get_shape_type())
+            .field("radius", &self.get_radius())
+            .field("half_extents", &self.get_half_extents())
+            .field("half_length", &self.get_half_length())
+            .finish()
+    }
+}
+
+impl PartialEq for &InnerShapeWrapper {
+    fn eq(&self, other: &Self) -> bool {
+        self.get_shape_type() == other.get_shape_type()
+            && self.get_radius() == other.get_radius()
+            && self.get_half_extents() == other.get_half_extents()
+            && self.get_half_length() == other.get_half_length()
+    }
+}
+
 /// A wrapper type for the Shape trait to allow dynamic dispatch.
-pub type ShapeWrapper = Box<dyn Shape + Send + Sync>;
+pub type ShapeWrapper = Box<InnerShapeWrapper>;
+
+impl PartialEq for ShapeWrapper {
+    fn eq(&self, other: &Self) -> bool {
+        self.get_shape_type() == other.get_shape_type()
+            && self.get_radius() == other.get_radius()
+            && self.get_half_extents() == other.get_half_extents()
+            && self.get_half_length() == other.get_half_length()
+    }
+}
 
 /// Shape trait for defining geometric shapes.
 pub trait Shape {
@@ -35,7 +70,7 @@ pub trait Shape {
 }
 
 #[pyclass]
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ShapeType {
     Capsule,
     Cone,
