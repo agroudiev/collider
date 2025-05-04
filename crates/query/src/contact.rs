@@ -26,7 +26,7 @@ pub fn contact<S1: Shape, S2: Shape>(
     shape2: S2,
     pos2: Isometry3<f32>,
 ) -> Option<Contact> {
-    None
+    unimplemented!()
 }
 
 #[cfg(test)]

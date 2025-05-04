@@ -34,7 +34,7 @@ impl Shape for Cone {
     }
 
     fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
-        Box::new(self.clone())
+        Box::new(*self)
     }
 
     fn get_shape_type(&self) -> crate::shape::ShapeType {

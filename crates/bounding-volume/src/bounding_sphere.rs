@@ -1,6 +1,6 @@
 use nalgebra::Point3;
 
-use crate::bouding_volume::BoundingVolume;
+use crate::bounding_volume::BoundingVolume;
 
 /// A bounding sphere.
 #[derive(PartialEq, Debug, Clone, Copy)]

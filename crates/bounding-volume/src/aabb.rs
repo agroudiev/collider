@@ -1,6 +1,6 @@
 use nalgebra::Point3;
 
-use crate::bouding_volume::BoundingVolume;
+use crate::bounding_volume::BoundingVolume;
 
 /// Axis-Aligned Bounding Box (AABB) structure.
 /// An AABB is defined by its minimum and maximum corners in 3D space.
