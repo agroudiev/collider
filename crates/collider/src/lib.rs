@@ -4,4 +4,5 @@
 //! ## Shapes
 //! The library provides a variety of shapes for collision detection.
 
+pub use mesh;
 pub use shape;

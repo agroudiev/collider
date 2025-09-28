@@ -1,5 +1,5 @@
 [package]
-name = "collider"
+name = "mesh"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -9,5 +9,6 @@ repository.workspace = true
 license-file.workspace = true
 
 [dependencies]
-shape = { workspace = true}
-mesh = { workspace = true }
+nalgebra = { workspace = true }
+pyo3 = { workspace = true }
+numpy = { workspace = true}

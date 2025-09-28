@@ -1,5 +1,6 @@
 use pyo3::prelude::*;
 
+use collider::mesh::PyMesh;
 use collider::shape::{PyCapsule, PyCone, PyCuboid, PyCylinder, PySphere};
 
 /// A Python module implemented in Rust.
@@ -11,6 +12,9 @@ fn collider_py(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<PyCuboid>()?;
     m.add_class::<PyCylinder>()?;
     m.add_class::<PySphere>()?;
+
+    // Mesh
+    m.add_class::<PyMesh>()?;
 
     Ok(())
 }
