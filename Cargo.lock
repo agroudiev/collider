@@ -97,6 +97,7 @@ dependencies = [
  "nalgebra",
  "numpy",
  "pyo3",
+ "shape",
 ]
 
 [[package]]

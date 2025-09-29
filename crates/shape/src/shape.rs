@@ -77,6 +77,7 @@ pub enum ShapeType {
     Cuboid,
     Cylinder,
     Sphere,
+    Mesh,
 }
 
 /// A Python wrapper for the ShapeWrapper type.

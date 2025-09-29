@@ -1,3 +1,5 @@
+use shape::Shape;
+
 /// A 3D mesh shape.
 pub struct Mesh {
     /// The path to the mesh file.
@@ -11,6 +13,22 @@ impl Mesh {
     }
 }
 
+impl Shape for Mesh {
+    fn is_convex(&self) -> bool {
+        false
+    }
+
+    fn clone_box(&self) -> Box<dyn Shape + Send + Sync> {
+        Box::new(Mesh {
+            path: self.path.clone(),
+        })
+    }
+
+    fn get_shape_type(&self) -> shape::ShapeType {
+        shape::ShapeType::Mesh
+    }
+}
+
 /// A Python wrapper for the Mesh type.
 #[pyo3::pyclass]
 pub struct PyMesh {
@@ -21,7 +39,9 @@ pub struct PyMesh {
 impl PyMesh {
     #[new]
     fn new(path: String) -> Self {
-        PyMesh { inner: Mesh { path } }
+        PyMesh {
+            inner: Mesh { path },
+        }
     }
 
     #[getter]

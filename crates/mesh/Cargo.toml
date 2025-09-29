@@ -12,3 +12,4 @@ license-file.workspace = true
 nalgebra = { workspace = true }
 pyo3 = { workspace = true }
 numpy = { workspace = true}
+shape = { workspace = true }
