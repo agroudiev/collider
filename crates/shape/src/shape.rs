@@ -67,6 +67,11 @@ pub trait Shape {
     fn get_half_length(&self) -> Option<f32> {
         None
     }
+
+    /// Returns the mesh path of the shape.
+    fn get_mesh_path(&self) -> Option<String> {
+        None
+    }
 }
 
 #[pyclass]
@@ -126,6 +131,17 @@ impl PyShapeWrapper {
         } else {
             Err(pyo3::exceptions::PyValueError::new_err(
                 "Shape does not have a half length",
+            ))
+        }
+    }
+
+    #[getter]
+    fn get_mesh_path(&self) -> PyResult<String> {
+        if let Some(path) = self.inner.get_mesh_path() {
+            Ok(path)
+        } else {
+            Err(pyo3::exceptions::PyValueError::new_err(
+                "Shape is not a mesh and does not have a path",
             ))
         }
     }

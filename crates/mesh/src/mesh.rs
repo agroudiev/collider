@@ -27,6 +27,10 @@ impl Shape for Mesh {
     fn get_shape_type(&self) -> shape::ShapeType {
         shape::ShapeType::Mesh
     }
+
+    fn get_mesh_path(&self) -> Option<String> {
+        Some(self.path.clone())
+    }
 }
 
 /// A Python wrapper for the Mesh type.
