@@ -86,7 +86,7 @@ pub enum ShapeType {
 }
 
 /// A Python wrapper for the ShapeWrapper type.
-#[pyo3::pyclass]
+#[pyo3::pyclass(name = "Shape")]
 pub struct PyShapeWrapper {
     pub inner: ShapeWrapper,
 }
