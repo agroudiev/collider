@@ -30,14 +30,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
-name = "collider"
-version = "0.0.1"
-dependencies = [
- "collider-mesh",
- "collider-shape",
-]
-
-[[package]]
 name = "collider-bounding-volume"
 version = "0.0.1"
 dependencies = [
@@ -59,7 +51,7 @@ dependencies = [
 name = "collider-py"
 version = "0.1.0"
 dependencies = [
- "collider",
+ "collider-rs",
  "pyo3",
 ]
 
@@ -69,6 +61,14 @@ version = "0.0.1"
 dependencies = [
  "collider-shape",
  "nalgebra",
+]
+
+[[package]]
+name = "collider-rs"
+version = "0.0.1"
+dependencies = [
+ "collider-mesh",
+ "collider-shape",
 ]
 
 [[package]]

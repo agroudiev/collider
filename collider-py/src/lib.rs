@@ -1,7 +1,7 @@
 use pyo3::prelude::*;
 
-use collider::mesh::PyMesh;
-use collider::shape::{PyCapsule, PyCone, PyCuboid, PyCylinder, PySphere};
+use collider_rs::mesh::PyMesh;
+use collider_rs::shape::{PyCapsule, PyCone, PyCuboid, PyCylinder, PySphere};
 
 /// A Python module implemented in Rust.
 #[pymodule(name = "collider")]
