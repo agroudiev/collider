@@ -6,7 +6,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 authors = ["Antoine Groudiev <antoine.groudiev@ens.psl.eu>"]
 readme = "README.md"
@@ -20,5 +20,5 @@ numpy = "0.24.0"
 nalgebra = "0.33.2"
 
 collider = { path = "crates/collider", version = "0.0.1" }
-shape = { path = "crates/shape", version = "0.0.1" }
-mesh = { path = "crates/mesh", version = "0.0.1" }
+collider-shape = { path = "crates/collider-shape", version = "0.0.1" }
+collider-mesh = { path = "crates/collider-mesh", version = "0.0.1" }

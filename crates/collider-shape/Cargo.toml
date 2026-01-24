@@ -1,5 +1,5 @@
 [package]
-name = "query"
+name = "collider-shape"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -10,4 +10,5 @@ license-file.workspace = true
 
 [dependencies]
 nalgebra = { workspace = true }
-shape = { path = "../shape" }
+pyo3 = { workspace = true }
+numpy = { workspace = true}

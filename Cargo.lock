@@ -18,14 +18,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
 
 [[package]]
-name = "bounding_volume"
-version = "0.1.0"
-dependencies = [
- "nalgebra",
- "pyo3",
-]
-
-[[package]]
 name = "bytemuck"
 version = "1.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -39,10 +31,28 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "collider"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
- "mesh",
- "shape",
+ "collider-mesh",
+ "collider-shape",
+]
+
+[[package]]
+name = "collider-bounding-volume"
+version = "0.0.1"
+dependencies = [
+ "nalgebra",
+ "pyo3",
+]
+
+[[package]]
+name = "collider-mesh"
+version = "0.0.1"
+dependencies = [
+ "collider-shape",
+ "nalgebra",
+ "numpy",
+ "pyo3",
 ]
 
 [[package]]
@@ -50,6 +60,23 @@ name = "collider-py"
 version = "0.1.0"
 dependencies = [
  "collider",
+ "pyo3",
+]
+
+[[package]]
+name = "collider-query"
+version = "0.0.1"
+dependencies = [
+ "collider-shape",
+ "nalgebra",
+]
+
+[[package]]
+name = "collider-shape"
+version = "0.0.1"
+dependencies = [
+ "nalgebra",
+ "numpy",
  "pyo3",
 ]
 
@@ -88,16 +115,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "488016bfae457b036d996092f6cb448677611ce4449e970ceaf42695203f218a"
 dependencies = [
  "autocfg",
-]
-
-[[package]]
-name = "mesh"
-version = "0.1.0"
-dependencies = [
- "nalgebra",
- "numpy",
- "pyo3",
- "shape",
 ]
 
 [[package]]
@@ -306,14 +323,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "query"
-version = "0.1.0"
-dependencies = [
- "nalgebra",
- "shape",
-]
-
-[[package]]
 name = "quote"
 version = "1.0.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -341,15 +350,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "96b02de82ddbe1b636e6170c21be622223aea188ef2e139be0a5b219ec215323"
 dependencies = [
  "bytemuck",
-]
-
-[[package]]
-name = "shape"
-version = "0.1.0"
-dependencies = [
- "nalgebra",
- "numpy",
- "pyo3",
 ]
 
 [[package]]

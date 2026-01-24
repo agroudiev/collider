@@ -1,5 +1,5 @@
 [package]
-name = "mesh"
+name = "collider-query"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -10,6 +10,4 @@ license-file.workspace = true
 
 [dependencies]
 nalgebra = { workspace = true }
-pyo3 = { workspace = true }
-numpy = { workspace = true}
-shape = { workspace = true }
+collider-shape = { workspace = true }

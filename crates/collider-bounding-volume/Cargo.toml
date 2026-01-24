@@ -1,5 +1,5 @@
 [package]
-name = "bounding_volume"
+name = "collider-bounding-volume"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true

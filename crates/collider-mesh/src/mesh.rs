@@ -1,4 +1,4 @@
-use shape::Shape;
+use collider_shape::{Shape, ShapeType};
 
 /// A 3D mesh shape.
 pub struct Mesh {
@@ -24,8 +24,8 @@ impl Shape for Mesh {
         })
     }
 
-    fn get_shape_type(&self) -> shape::ShapeType {
-        shape::ShapeType::Mesh
+    fn get_shape_type(&self) -> ShapeType {
+        ShapeType::Mesh
     }
 
     fn get_mesh_path(&self) -> Option<String> {
