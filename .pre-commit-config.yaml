@@ -1,0 +1,20 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.8.0
+    hooks:
+      - id: black
+        args: ["--check", "examples/python", "dynamics-py"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+      - id: flake8
+        language_version: python3.13
+  - repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+    - id: cargo-check
+      args: ["--workspace", "--tests"]
+    - id: fmt
+      args: ["--", "--check"]
+    - id: clippy
+      args: ["--", "-D", "warnings"]
