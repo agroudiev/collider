@@ -12,4 +12,4 @@ dependencies:
   - coal
   - black
   - flake8
-  - parametrized
+  - parameterized
