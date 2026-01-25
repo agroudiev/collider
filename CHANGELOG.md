@@ -2,7 +2,7 @@
 
 This file is used to track changes made to the project over time.
 
-## [Unreleased]
+## [0.0.1] - 2026-01-25
 ### Added
 - The following shapes were added to the `collider-shape` crate:
   - Capsule
