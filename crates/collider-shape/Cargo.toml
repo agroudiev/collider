@@ -11,4 +11,4 @@ license-file.workspace = true
 [dependencies]
 nalgebra.workspace = true
 pyo3.workspace = true
-numpy = { workspace = true}
+numpy.workspace = true

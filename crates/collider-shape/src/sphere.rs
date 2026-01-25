@@ -1,10 +1,9 @@
 use pyo3::{pyclass, pymethods};
 
-use crate::shape::Shape;
+use crate::{ShapeType, shape::Shape};
 
-/// A sphere shape.
+/// A sphere shape, defined by its radius.
 #[derive(PartialEq, Debug, Copy, Clone)]
-#[pyclass(name = "Sphere")]
 pub struct Sphere {
     ///  The radius of the sphere.
     pub radius: f32,
@@ -30,8 +29,8 @@ impl Shape for Sphere {
         Box::new(*self)
     }
 
-    fn get_shape_type(&self) -> crate::shape::ShapeType {
-        crate::shape::ShapeType::Sphere
+    fn get_shape_type(&self) -> ShapeType {
+        ShapeType::Sphere
     }
 
     fn get_radius(&self) -> Option<f32> {

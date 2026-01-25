@@ -7,7 +7,6 @@ use crate::shape::Shape;
 ///
 /// The cuboid is zero-centered and defined by its half extents along the `x`, `y`, and `z` axes.
 #[derive(PartialEq, Debug, Clone, Copy)]
-#[pyclass(name = "Cuboid")]
 pub struct Cuboid {
     /// The half extents of the cuboid.
     pub half_extents: Vector3<f32>,

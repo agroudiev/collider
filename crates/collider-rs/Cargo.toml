@@ -9,5 +9,5 @@ repository.workspace = true
 license-file.workspace = true
 
 [dependencies]
-collider-shape = { workspace = true}
+collider-shape.workspace = true
 collider-mesh.workspace = true

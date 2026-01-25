@@ -6,7 +6,6 @@ use crate::shape::Shape;
 ///
 /// The base of the cylinder is at `(0, 0, -half_length)` and the top is at `(0, 0, half_length)`.
 #[derive(PartialEq, Debug, Copy, Clone)]
-#[pyclass(name = "Cylinder")]
 pub struct Cylinder {
     /// The radius of the cylinder.
     pub radius: f32,
