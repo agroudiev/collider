@@ -1,7 +1,13 @@
 [package]
 name = "collider-py"
-version = "0.1.0"
-edition = "2024"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+readme.workspace = true
+description.workspace = true
+repository.workspace = true
+homepage.workspace = true
+license-file.workspace = true
 
 [lib]
 name = "collider"
@@ -9,5 +15,5 @@ crate-type = ["cdylib"]
 doc = false
 
 [dependencies]
-pyo3 = { workspace = true}
+pyo3.workspace = true
 collider-rs.workspace = true
