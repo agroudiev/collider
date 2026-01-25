@@ -12,7 +12,15 @@ authors = ["Antoine Groudiev <antoine.groudiev@ens.psl.eu>"]
 readme = "README.md"
 description = "An experimental collision-detection library."
 repository = "https://github.com/agroudiev/collider"
+homepage = "https://github.com/agroudiev/collider"
 license-file = "LICENSE"
+keywords = ["collision-detection", "geometry", "physics", "robotics"]
+categories = ["science", "mathematics", "science::robotics"]
+
+exclude = [
+    ".github/*",
+    ".pre-commit-config.yaml",
+]
 
 [workspace.dependencies]
 pyo3 = { version = "0.24.1", features = ["extension-module"] }
