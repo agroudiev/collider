@@ -10,4 +10,4 @@ doc = false
 
 [dependencies]
 pyo3 = { workspace = true}
-collider-rs = { workspace = true }
+collider-rs.workspace = true

@@ -9,5 +9,5 @@ repository.workspace = true
 license-file.workspace = true
 
 [dependencies]
-nalgebra = { workspace = true }
-collider-shape = { workspace = true }
+nalgebra.workspace = true
+collider-shape.workspace = true
