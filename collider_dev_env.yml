@@ -9,3 +9,7 @@ dependencies:
   - jupyterlab
   - ipywidgets
   - pip
+  - coal
+  - black
+  - flake8
+  - parametrized
