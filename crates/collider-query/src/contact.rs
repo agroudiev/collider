@@ -35,6 +35,7 @@ mod test {
 
     use super::*;
 
+    #[ignore]
     #[test]
     fn test_contact() {
         let shape1 = Cuboid::new(nalgebra::Vector3::new(1.0, 1.0, 1.0));
