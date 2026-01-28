@@ -9,7 +9,10 @@ repository.workspace = true
 homepage.workspace = true
 license-file.workspace = true
 
+[features]
+python = ["pyo3", "numpy"]
+
 [dependencies]
 nalgebra.workspace = true
-pyo3.workspace = true
-numpy.workspace = true
+pyo3 = { workspace = true, optional = true }
+numpy = { workspace = true, optional = true }

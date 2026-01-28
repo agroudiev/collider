@@ -9,6 +9,10 @@ repository.workspace = true
 homepage.workspace = true
 license-file.workspace = true
 
+[features]
+python = ["collider-shape/python", "collider-mesh/python"]
+default = []
+
 [dependencies]
 collider-shape.workspace = true
 collider-mesh.workspace = true

@@ -6,3 +6,6 @@
 pub use mesh::*;
 
 pub mod mesh;
+
+#[cfg(feature = "python")]
+pub mod py_mesh;

@@ -1,5 +1,3 @@
-use pyo3::{pyclass, pymethods};
-
 use crate::shape::Shape;
 
 /// A capsule shape aligned along the `z`-axis.
@@ -48,21 +46,5 @@ impl Shape for Capsule {
 
     fn get_half_length(&self) -> Option<f32> {
         Some(self.half_length)
-    }
-}
-
-#[pyclass(name = "Capsule")]
-pub struct PyCapsule {
-    pub inner: Capsule,
-}
-
-#[pymethods]
-impl PyCapsule {
-    /// Creates a new capsule with given radius and length along the `z` axis.
-    #[new]
-    fn new(radius: f32, length: f32) -> Self {
-        PyCapsule {
-            inner: Capsule::new(radius, length / 2.0),
-        }
     }
 }

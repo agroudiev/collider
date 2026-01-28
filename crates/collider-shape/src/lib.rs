@@ -23,3 +23,17 @@ pub mod cone;
 pub mod cuboid;
 pub mod cylinder;
 pub mod sphere;
+
+#[cfg(feature = "python")]
+pub mod py_shape;
+
+#[cfg(feature = "python")]
+pub mod py_capsule;
+#[cfg(feature = "python")]
+pub mod py_cone;
+#[cfg(feature = "python")]
+pub mod py_cuboid;
+#[cfg(feature = "python")]
+pub mod py_cylinder;
+#[cfg(feature = "python")]
+pub mod py_sphere;
