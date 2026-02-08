@@ -2,6 +2,10 @@
 
 This file is used to track changes made to the project over time.
 
+## [0.0.2] - 2026-02-08
+- Create a `python` feature to selectively enable Python bindings for the crate.
+- Minor build script fixes
+
 ## [0.0.1] - 2026-01-25
 ### Added
 - The following shapes were added to the `collider-shape` crate:

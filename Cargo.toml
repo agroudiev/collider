@@ -6,7 +6,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 authors = ["Antoine Groudiev <antoine.groudiev@ens.psl.eu>"]
 readme = "README.md"
@@ -27,6 +27,6 @@ pyo3 = { version = "0.24.1", features = ["extension-module"] }
 numpy = "0.24.0"
 nalgebra = "0.33.2"
 
-collider-rs = { path = "crates/collider-rs", version = "0.0.1" }
-collider-shape = { path = "crates/collider-shape", version = "0.0.1" }
-collider-mesh = { path = "crates/collider-mesh", version = "0.0.1" }
+collider-rs = { path = "crates/collider-rs", version = "0.0.2" }
+collider-shape = { path = "crates/collider-shape", version = "0.0.2" }
+collider-mesh = { path = "crates/collider-mesh", version = "0.0.2" }
