@@ -1,5 +1,16 @@
 # collider
 An experimental collision-detection library.
+<div align="center">
+  <a href="https://crates.io/crates/collider-rs">
+    <img src="https://img.shields.io/crates/v/collider-rs.svg" alt="crates.io Latest Release"/>
+  </a>
+  <a href="https://pypi.org/project/collider-py/">
+    <img src="https://img.shields.io/pypi/v/collider-py.svg" alt="PyPi Latest Release"/>
+  </a>
+  <a href="https://docs.rs/collider-rs/latest/collider_rs/">
+    <img src="https://img.shields.io/docsrs/collider-rs" alt="Docs.rs Documentation"/>
+  </a>
+</div>
 
 ## Installation
 The use of [miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended to manage the dependencies. To install the dependencies, run the following command:
