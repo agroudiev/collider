@@ -1,1 +1,2 @@
-../README.md
+# collider
+An experimental collision-detection library.
