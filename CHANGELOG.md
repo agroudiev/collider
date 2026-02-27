@@ -2,6 +2,9 @@
 
 This file is used to track changes made to the project over time.
 
+## [0.0.3] - 2026-02-27
+No changes were made in this release. The version was bumped to reflect the `dynamics` library's version update.
+
 ## [0.0.2] - 2026-02-08
 - Create a `python` feature to selectively enable Python bindings for the crate.
 - Minor build script fixes

@@ -31,7 +31,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "collider-bounding-volume"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "nalgebra",
  "pyo3",
@@ -39,7 +39,7 @@ dependencies = [
 
 [[package]]
 name = "collider-mesh"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "collider-shape",
  "nalgebra",
@@ -49,7 +49,7 @@ dependencies = [
 
 [[package]]
 name = "collider-py"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "collider-rs",
  "pyo3",
@@ -57,7 +57,7 @@ dependencies = [
 
 [[package]]
 name = "collider-query"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "collider-shape",
  "nalgebra",
@@ -65,7 +65,7 @@ dependencies = [
 
 [[package]]
 name = "collider-rs"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "collider-mesh",
  "collider-shape",
@@ -73,7 +73,7 @@ dependencies = [
 
 [[package]]
 name = "collider-shape"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "nalgebra",
  "numpy",
